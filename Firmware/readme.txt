@@ -1,0 +1,1 @@
+Please download the Arduino library using the library manager for lots of easy to use examples: https://github.com/sparkfun/SparkFun_BNO080_Arduino_Library
