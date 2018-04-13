@@ -15585,6 +15585,13 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <vertex x="80.38" y="46.92"/>
 </polygon>
 </package>
+<package name="REVISION">
+<description>&lt;h3&gt;"Revision By" Text - tDoc&lt;/h3&gt;
+&lt;p&gt;Preceding text for revisor documentation.&lt;/p&gt;
+&lt;p&gt;Devices using:
+&lt;ul&gt;&lt;li&gt;REVISION&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
+<text x="0" y="0" size="1.778" layer="51" font="vector">Revision By: </text>
+</package>
 </packages>
 <symbols>
 <symbol name="FRAME-LETTER">
@@ -20398,6 +20405,13 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <vertex x="40.16" y="23.55"/>
 </polygon>
 </symbol>
+<symbol name="REVISION">
+<description>&lt;h3&gt;"Revision By" Text - Symbol&lt;/h3&gt;
+&lt;p&gt;Preceding text for revisor documentation.&lt;/p&gt;
+&lt;p&gt;Devices using:
+&lt;ul&gt;&lt;li&gt;REVISION&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
+<text x="0" y="0" size="2.54" layer="94">Revision By: </text>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="FRAME-LETTER" prefix="FRAME">
@@ -20619,6 +20633,20 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </technologies>
 </device>
 <device name="1_INCH" package="SFE_LOGO_NAME_FLAME_1">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="REVISION" prefix="LOGO">
+<description>&lt;h3&gt;"Revision By" Text&lt;/h3&gt;
+&lt;p&gt;Preceding text for revisor documentation. Includes schematic text on "symbols" layer, and board text on tDoc.&lt;/p&gt;</description>
+<gates>
+<gate name="G$1" symbol="REVISION" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="REVISION">
 <technologies>
 <technology name=""/>
 </technologies>
@@ -24726,12 +24754,13 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="SUPPLY3" library="SparkFun-PowerSymbols" deviceset="3.3V" device=""/>
 <part name="R2" library="SparkFun-Resistors" deviceset="1KOHM" device="-0603-1/10W-1%" value="1k"/>
 <part name="GND15" library="SparkFun" deviceset="GND" device=""/>
+<part name="LOGO2" library="SparkFun-Aesthetics" deviceset="REVISION" device=""/>
 </parts>
 <sheets>
 <sheet>
 <plain>
 <text x="170.434" y="11.43" size="2.54" layer="94">N. Seidle</text>
-<text x="237.744" y="7.366" size="2.54" layer="94">X10</text>
+<text x="237.744" y="7.366" size="2.54" layer="94">v10</text>
 <text x="7.62" y="132.08" size="1.778" layer="97">7-Bit I2C Address Jumper</text>
 <text x="10.16" y="127" size="1.778" layer="97">Closed = 0x4A</text>
 <text x="10.16" y="129.54" size="1.778" layer="97">Open (default) = 0x4B</text>
@@ -24775,6 +24804,7 @@ SPI</text>
 <wire x1="147.32" y1="91.44" x2="147.32" y2="35.56" width="0.2032" layer="97"/>
 <wire x1="93.98" y1="91.44" x2="93.98" y2="0" width="0.2032" layer="97"/>
 <text x="240.792" y="159.258" size="1.778" layer="97" rot="R90">Power</text>
+<text x="174.498" y="7.366" size="2.54" layer="94">A. England</text>
 </plain>
 <instances>
 <instance part="JP3" gate="G$1" x="246.38" y="30.48"/>
@@ -24851,6 +24881,7 @@ SPI</text>
 <instance part="SUPPLY3" gate="G$1" x="233.68" y="172.72"/>
 <instance part="R2" gate="G$1" x="233.68" y="149.86" rot="R90"/>
 <instance part="GND15" gate="1" x="233.68" y="139.7"/>
+<instance part="LOGO2" gate="G$1" x="148.59" y="7.366"/>
 </instances>
 <busses>
 </busses>

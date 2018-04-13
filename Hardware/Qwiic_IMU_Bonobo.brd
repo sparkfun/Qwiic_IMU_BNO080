@@ -29,10 +29,10 @@
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="21" name="tPlace" color="16" fill="1" visible="yes" active="yes"/>
-<layer number="22" name="bPlace" color="14" fill="1" visible="yes" active="yes"/>
+<layer number="22" name="bPlace" color="14" fill="1" visible="no" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
@@ -52,13 +52,13 @@
 <layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
-<layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
 <layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
-<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="yes"/>
-<layer number="51" name="tDocu" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="51" name="tDocu" color="6" fill="1" visible="no" active="yes"/>
 <layer number="52" name="bDocu" color="7" fill="1" visible="no" active="yes"/>
 <layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
 <layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
@@ -160,7 +160,7 @@
 <wire x1="0" y1="25.4" x2="30.48" y2="25.4" width="0.2032" layer="20"/>
 <wire x1="30.48" y1="25.4" x2="30.48" y2="0" width="0.2032" layer="20"/>
 <wire x1="30.48" y1="0" x2="0" y2="0" width="0.2032" layer="20"/>
-<text x="2.413" y="1.27" size="1.27" layer="16" font="vector" ratio="15" rot="MR0" align="center">V10</text>
+<text x="2.413" y="1.27" size="1.27" layer="16" font="vector" ratio="15" rot="MR0" align="center">v10</text>
 <dimension x1="2.54" y1="22.86" x2="27.94" y2="22.86" x3="15.24" y3="31.75" textsize="1.27" textratio="15" layer="47" unit="inch"/>
 <dimension x1="0" y1="25.4" x2="0" y2="0" x3="-8.89" y3="12.7" textsize="1.27" textratio="15" layer="47" unit="inch"/>
 <circle x="3.683" y="18.669" radius="0.127" width="0.254" layer="21"/>
@@ -205,9 +205,10 @@
 <wire x1="3.128778125" y1="19.656828125" x2="3.038975" y2="19.38741875" width="0.1778" layer="22"/>
 <wire x1="3.038975" y1="19.38741875" x2="3.308384375" y2="19.297615625" width="0.1778" layer="22"/>
 <wire x1="7.62" y1="17.78" x2="22.86" y2="17.78" width="0.1524" layer="22"/>
-<text x="10.16" y="-17.78" size="1.778" layer="51" font="vector" ratio="15">N. Seidle</text>
+<text x="17.78" y="-7.62" size="1.778" layer="51" font="vector">N. Seidle</text>
 <dimension x1="6.35" y1="1.27" x2="6.35" y2="24.13" x3="-3.81" y3="12.7" textsize="1.27" textratio="15" layer="47" dtype="vertical" unit="inch"/>
 <dimension x1="8.89" y1="19.05" x2="8.89" y2="24.13" x3="-1.27" y3="21.59" textsize="1.27" textratio="15" layer="47" dtype="vertical" unit="inch"/>
+<text x="17.78" y="-10.16" size="1.778" layer="51" font="vector">A. England</text>
 </plain>
 <libraries>
 <library name="SparkFun">
@@ -1738,6 +1739,13 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <vertex x="1.86" y="2.35"/>
 <vertex x="1.78" y="2.44"/>
 </polygon>
+</package>
+<package name="REVISION">
+<description>&lt;h3&gt;"Revision By" Text - tDoc&lt;/h3&gt;
+&lt;p&gt;Preceding text for revisor documentation.&lt;/p&gt;
+&lt;p&gt;Devices using:
+&lt;ul&gt;&lt;li&gt;REVISION&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</description>
+<text x="0" y="0" size="1.778" layer="51" font="vector">Revision By: </text>
 </package>
 </packages>
 </library>
@@ -8223,7 +8231,7 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 <element name="JP6" library="SparkFun" package="MICRO-FIDUCIAL" value="FIDUCIALUFIDUCIAL" x="0.762" y="24.638"/>
 <element name="J2" library="SparkX" package="1X04_1MM_RA" value="SMD" x="5.08" y="12.7" rot="R270"/>
 <element name="J3" library="SparkX" package="1X04_NO_SILK" value="PTH" x="11.43" y="1.27"/>
-<element name="FRAME1" library="SparkFun-Aesthetics" package="CREATIVE_COMMONS" value="FRAME-LETTER" x="-20.32" y="-17.78"/>
+<element name="FRAME1" library="SparkFun-Aesthetics" package="CREATIVE_COMMONS" value="FRAME-LETTER" x="-12.7" y="-7.62"/>
 <element name="C4" library="SparkFun-Capacitors" package="0603" value="0.1uF" x="14.224" y="7.62" rot="R270">
 <attribute name="PROD_ID" value="CAP-00810" x="14.224" y="7.62" size="1.778" layer="27" font="vector" ratio="15" rot="R270" display="off"/>
 </element>
@@ -8343,6 +8351,7 @@ These rules have been curated by SparkFuns DFM commitee. After doing much resear
 </element>
 <element name="U$1" library="Labels-0_04" package="(PWR)" value="" x="25.781" y="15.875" rot="R90"/>
 <element name="U$59" library="Qwiic#Label#Full#M#png (6)" package="QWIIC#LABEL#FULL#M#PNG" value="" x="27.305" y="13.208" rot="MR0"/>
+<element name="LOGO2" library="SparkFun-Aesthetics" package="REVISION" value="REVISION" x="-33.02" y="-13.97"/>
 </elements>
 <signals>
 <signal name="3.3V">
