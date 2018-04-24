@@ -54,7 +54,7 @@ void setup() {
   printArray(Serial.list());
   // Depending on where your GridEYE falls on this list, you
   // may need to change Serial.list()[0] to a different number
-  myPort = new Serial(this, Serial.list()[0], 9600);
+  myPort = new Serial(this, Serial.list()[1], 9600);
   myPort.clear();
   // Throw out the first chunk in case we caught it in the 
   // middle of a frame
@@ -78,7 +78,7 @@ void draw() {
   String inQuat[] = splitTokens(myString, ",");  
   
   // build a Quaternion from inQuat[] array
-  RotQ = new Quaternion(float(inQuat[0]), float(inQuat[1]),float(inQuat[2]),float(inQuat[3]));
+  RotQ = new Quaternion(float(inQuat[0]), float(inQuat[1]), float(inQuat[2]),float(inQuat[3]));
   
   RotQ.toMatrix4x4().toFloatArray(qMatrix);
   
@@ -115,7 +115,6 @@ void draw() {
   translate(width/2,height/2,0);
   
   // Do some rotates to get oriented "behind" the device
-  rotateY(PI);
   rotateX(-PI/2);
   
   // Apply the Matrix that we generated from our IMU Quaternion
