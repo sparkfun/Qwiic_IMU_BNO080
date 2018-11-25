@@ -71,63 +71,65 @@ void draw() {
   // When there is a sizeable amount of data on the serial port
   // read everything up to the first linefeed
   if(myPort.available() > 30){
-  myString = myPort.readStringUntil(13);
-  
-  // generate an array of strings that contains each of the comma
-  // separated values
-  String inQuat[] = splitTokens(myString, ",");  
-  
-  // build a Quaternion from inQuat[] array
-  RotQ = new Quaternion(float(inQuat[0]), float(inQuat[1]), float(inQuat[2]),float(inQuat[3]));
-  
-  RotQ.toMatrix4x4().toFloatArray(qMatrix);
-  
-  M1.set(
-  qMatrix[0], 
-  qMatrix[1], 
-  qMatrix[2], 
-  qMatrix[3], 
-  qMatrix[4], 
-  qMatrix[5], 
-  qMatrix[6], 
-  qMatrix[7], 
-  qMatrix[8], 
-  qMatrix[9], 
-  qMatrix[10], 
-  qMatrix[11], 
-  qMatrix[12], 
-  qMatrix[13], 
-  qMatrix[14], 
-  qMatrix[15]
-  );
-  
-  AABB cube;
+    myString = myPort.readStringUntil(13);
 
-  background(255);
-  
-  // Set some mood lighting
-  ambientLight(128, 128, 128);
-  directionalLight(128, 128, 128, 0, 0, 1);
-  lightFalloff(1, 0, 0);
-  lightSpecular(0, 0, 0);
-  
-  // Get to the middle of the screen
-  translate(width/2,height/2,0);
-  
-  // Do some rotates to get oriented "behind" the device
-  rotateX(-PI/2);
-  
-  // Apply the Matrix that we generated from our IMU Quaternion
-  applyMatrix(M1);
-  
-  // Draw the Cube from a 3D Bounding Box
-  cube=new AABB(new Vec3D(0,0,0),new Vec3D(100,100,100));
-  gfx.box(cube);
+    // generate an array of strings that contains each of the commas
+    // separated values
+    String inQuat[] = splitTokens(myString, ",");  
+    
+    // make sure that inQuat has a length of 4 before proceeding
+    if (inQuat.length == 4){
+      // build a Quaternion from inQuat[] array
+      RotQ = new Quaternion(float(inQuat[0]), float(inQuat[1]), float(inQuat[2]),float(inQuat[3]));
+
+      RotQ.toMatrix4x4().toFloatArray(qMatrix);
+
+      M1.set(
+      qMatrix[0], 
+      qMatrix[1], 
+      qMatrix[2], 
+      qMatrix[3], 
+      qMatrix[4], 
+      qMatrix[5], 
+      qMatrix[6], 
+      qMatrix[7], 
+      qMatrix[8], 
+      qMatrix[9], 
+      qMatrix[10], 
+      qMatrix[11], 
+      qMatrix[12], 
+      qMatrix[13], 
+      qMatrix[14], 
+      qMatrix[15]
+      );
+
+      AABB cube;
+
+      background(255);
+
+      // Set some mood lighting
+      ambientLight(128, 128, 128);
+      directionalLight(128, 128, 128, 0, 0, 1);
+      lightFalloff(1, 0, 0);
+      lightSpecular(0, 0, 0);
+
+      // Get to the middle of the screen
+      translate(width/2,height/2,0);
+
+      // Do some rotates to get oriented "behind" the device
+      rotateX(-PI/2);
+
+      // Apply the Matrix that we generated from our IMU Quaternion
+      applyMatrix(M1);
+
+      // Draw the Cube from a 3D Bounding Box
+      cube=new AABB(new Vec3D(0,0,0),new Vec3D(100,100,100));
+      gfx.box(cube);
+    }
   }else{
     if(waitFlag){
     textSize(32);
     text("Waiting for quaternions to chew on...", 10, 30); 
     waitFlag = false;}
   }
-
 }
