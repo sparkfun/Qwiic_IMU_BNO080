@@ -29,6 +29,8 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
+//Download and manually install "toxiclibs-complete-0021.zip" => https://github.com/postspectacular/toxiclibs/releases/tag/0021
+//Make sure to install in the correct path using Processing 3 => https://github.com/processing/processing/wiki/How-to-Install-a-Contributed-Library#manual-install
 import toxi.geom.*;
 import toxi.geom.mesh.*;
 import toxi.math.waves.*;
@@ -52,9 +54,10 @@ void setup() {
   
   // Print a list of connected serial devices in the console
   printArray(Serial.list());
-  // Depending on where your GridEYE falls on this list, you
+  // Depending on where your BNO086 falls on this list, you
   // may need to change Serial.list()[0] to a different number
-  myPort = new Serial(this, Serial.list()[1], 9600);
+  myPort = new Serial(this, Serial.list()[6], 9600); //115200 baud seems to be too much for Processing?...
+  //delay(50);
   myPort.clear();
   // Throw out the first chunk in case we caught it in the 
   // middle of a frame
